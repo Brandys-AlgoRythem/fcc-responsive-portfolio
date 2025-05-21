@@ -1,8 +1,6 @@
-# freeCodeCamp - Personal Portfolio Webpage Project (FCC Version)
+# Responsive Personal Portfolio Webpage
 
-This project is my first personal portfolio webpage, built as part of the freeCodeCamp Responsive Web Design Certification. It's designed to showcase the projects completed during the certification and demonstrate foundational web development skills using HTML5 and CSS3.
-
-The portfolio is responsive, ensuring it adapts to different screen sizes, and includes sections for a welcome, projects, and contact links.
+This project is an early version of a personal portfolio webpage, built to showcase a collection of web development projects. It demonstrates foundational skills in HTML5 for structure and CSS3 for styling and responsive design, adapting to different screen sizes.
 
 ## Live Demo
 

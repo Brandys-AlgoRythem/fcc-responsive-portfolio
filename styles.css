@@ -1,0 +1,260 @@
+CSS
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* For smooth scrolling on nav link clicks */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* A nice modern font, add Google Font import if needed */
+    background-color: #f4f4f9;
+    color: #333;
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+/* Navbar */
+#navbar {
+    position: fixed; /* Requirement: Navbar always at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40; /* Dark background for navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure navbar is above other content */
+    height: 60px;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center;
+    padding-right: 30px;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin-left: 25px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #f8f9fa; /* Light text color */
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: #00bfff; /* A bright hover color */
+}
+
+/* Welcome Section */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Requirement: Height equal to viewport */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
+    color: white;
+    padding: 20px;
+}
+
+.welcome-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.welcome-content .subtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+.welcome-content .skills-preview {
+    font-size: 1.1em;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+/* Projects Section */
+#projects {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-tile {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures image corners are rounded if image is larger */
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* To make the whole tile clickable if it's an <a> tag */
+}
+
+.project-tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.project-tile .project-title {
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.project-tile .code {
+    color: #007bff; /* Color for the pseudo code tags */
+    font-weight: normal;
+}
+
+.btn-show-all {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 25px;
+    background-color: #343a40;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-show-all:hover {
+    background-color: #555c63;
+}
+
+.btn-show-all .fas {
+    margin-left: 8px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-detail {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-detail:hover {
+    color: #00bfff; /* Bright hover color */
+    transform: translateY(-3px);
+}
+
+.contact-detail .fab, .contact-detail .fas {
+    margin-right: 10px;
+    font-size: 1.5em; /* Icon size */
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Media Query Requirement */
+@media (max-width: 768px) {
+    #welcome-section h1 {
+        font-size: 2.5em;
+    }
+    .welcome-content .subtitle {
+        font-size: 1.2em;
+    }
+
+    #navbar {
+        padding-right: 15px; /* Adjust padding for smaller screens */
+        justify-content: center; /* Center links on smaller screens */
+    }
+    #navbar ul li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #navbar ul li a {
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack projects on smaller screens */
+    }
+
+    #contact h2 {
+        font-size: 2em;
+    }
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}

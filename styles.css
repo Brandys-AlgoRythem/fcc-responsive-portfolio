@@ -1,4 +1,3 @@
-
 /* Basic Reset & Global Styles */
 * {
     margin: 0;
@@ -11,24 +10,24 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* A nice modern font, add Google Font import if needed */
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Primary Body Font */
+    background-color: #2C3E50; /* Primary Background: Dark Charcoal/Deep Navy */
+    color: #BDC3C7; /* Body Text Color: Light Gray */
     padding-top: 60px; /* Space for fixed navbar */
 }
 
 /* Navbar */
 #navbar {
-    position: fixed; /* Requirement: Navbar always at top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #343a40; /* Dark background for navbar */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000; /* Ensure navbar is above other content */
+    background-color: #22303E; /* Darker shade for navbar background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    z-index: 1000;
     height: 60px;
     display: flex;
-    justify-content: flex-end; /* Align links to the right */
+    justify-content: flex-end;
     align-items: center;
     padding-right: 30px;
 }
@@ -44,15 +43,16 @@ body {
 
 #navbar ul li a {
     text-decoration: none;
-    color: #f8f9fa; /* Light text color */
+    color: #BDC3C7; /* Nav link text color */
     font-size: 1.1em;
     font-weight: 500;
     padding: 5px 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
 }
 
 #navbar ul li a:hover {
-    color: #00bfff; /* A bright hover color */
+    color: #1ABC9C; /* Turquoise accent on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 /* Welcome Section */
@@ -62,118 +62,135 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh; /* Requirement: Height equal to viewport */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
-    color: white;
+    height: 100vh;
+    background: linear-gradient(135deg, #2C3E50 0%, #2F4050 100%); /* Subtle gradient for depth */
+    color: #ECF0F1; /* Welcome text color */
     padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow at the bottom of the section */
 }
 
 .welcome-content h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5em;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .welcome-content .subtitle {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     font-weight: 300;
     margin-bottom: 20px;
-    opacity: 0.9;
+    color: #BDC3C7; /* Slightly lighter for contrast */
 }
 .welcome-content .skills-preview {
     font-size: 1.1em;
     font-style: italic;
-    opacity: 0.8;
+    color: #BDC3C7;
 }
-
 
 /* Projects Section */
 #projects {
     padding: 60px 20px;
-    background-color: #ffffff;
+    background-color: #2C3E50; /* Primary background color */
     text-align: center;
 }
 
 #projects h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #333;
+    color: #1ABC9C; /* Accent color for section headings */
+    border-bottom: 2px solid #4A6278; /* Subtle separator */
+    padding-bottom: 10px;
+    display: inline-block; /* To make border bottom only as wide as text */
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .project-tile {
-    background-color: #f8f9fa;
+    background-color: #34495E; /* Slightly lighter background for cards */
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden; /* Ensures image corners are rounded if image is larger */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    overflow: hidden;
     text-decoration: none;
-    color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block; /* To make the whole tile clickable if it's an <a> tag */
+    color: #BDC3C7;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+    display: block;
 }
 
 .project-tile:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-10px); /* Lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35); /* Enhanced shadow on hover */
 }
 
 .project-tile img {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #4A6278; /* Subtle border */
+    transition: transform 0.3s ease-in-out; /* Smooth image scale */
+}
+
+.project-tile:hover img {
+    transform: scale(1.03); /* Subtle zoom effect on image hover */
 }
 
 .project-tile .project-title {
     padding: 20px;
     font-size: 1.2em;
     font-weight: 600;
+    color: #ECF0F1; /* Project title color */
 }
 
 .project-tile .code {
-    color: #007bff; /* Color for the pseudo code tags */
+    color: #1ABC9C; /* Turquoise for the pseudo code tags */
     font-weight: normal;
 }
 
 .btn-show-all {
     display: inline-block;
-    margin-top: 40px;
-    padding: 12px 25px;
-    background-color: #343a40;
-    color: white;
+    margin-top: 50px;
+    padding: 15px 30px;
+    background-color: #1ABC9C; /* Accent color */
+    color: #ECF0F1;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .btn-show-all:hover {
-    background-color: #555c63;
+    background-color: #FFD700; /* Gold on hover */
+    color: #2C3E50; /* Dark text on gold hover */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
 
 .btn-show-all .fas {
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 /* Contact Section */
 #contact {
-    background-color: #343a40;
-    color: #f8f9fa;
+    background-color: #2F4050; /* Slightly different dark shade for contact */
+    color: #ECF0F1;
     padding: 60px 20px;
     text-align: center;
 }
 
 #contact h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #fff;
+    color: #1ABC9C; /* Accent color for contact heading */
 }
 
 #contact p {
@@ -182,50 +199,62 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    color: #BDC3C7;
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .contact-detail {
-    color: #f8f9fa;
+    color: #ECF0F1;
     text-decoration: none;
     font-size: 1.2em;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
+    background-color: #34495E; /* Darker background for contact details */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contact-detail:hover {
-    color: #00bfff; /* Bright hover color */
-    transform: translateY(-3px);
+    color: #FFD700; /* Gold hover color */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .contact-detail .fab, .contact-detail .fas {
     margin-right: 10px;
-    font-size: 1.5em; /* Icon size */
+    font-size: 1.5em;
+    color: #1ABC9C; /* Accent color for icons */
+    transition: color 0.3s ease;
 }
+
+.contact-detail:hover .fab, .contact-detail:hover .fas {
+    color: #FFD700; /* Gold for icons on hover */
+}
+
 
 /* Footer */
 footer {
-    background-color: #212529;
-    color: #adb5bd;
+    background-color: #22303E; /* Even darker shade for footer */
+    color: #BDC3C7;
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
+    border-top: 1px solid #4A6278; /* Subtle border */
 }
 
 footer p {
     margin-bottom: 5px;
 }
 
-/* Media Query Requirement */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     #welcome-section h1 {
         font-size: 2.5em;
@@ -235,7 +264,7 @@ footer p {
     }
 
     #navbar {
-        padding-right: 15px; /* Adjust padding for smaller screens */
+        padding-right: 15px;
         justify-content: center; /* Center links on smaller screens */
     }
     #navbar ul li {
@@ -248,13 +277,58 @@ footer p {
 
     .projects-grid {
         grid-template-columns: 1fr; /* Stack projects on smaller screens */
+        padding: 0 15px;
     }
 
-    #contact h2 {
+    #projects h2, #contact h2 {
         font-size: 2em;
+    }
+    #contact p {
+        font-size: 1.1em;
     }
     .contact-links {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #welcome-section h1 {
+        font-size: 2em;
+    }
+    .welcome-content .subtitle {
+        font-size: 1em;
+    }
+    .welcome-content .skills-preview {
+        font-size: 0.9em;
+    }
+
+    #navbar ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #navbar ul li a {
+        font-size: 0.9em;
+        padding: 5px;
+    }
+
+    #projects h2, #contact h2 {
+        font-size: 1.8em;
+    }
+    .project-tile .project-title {
+        font-size: 1.1em;
+    }
+
+    .btn-show-all {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    #contact p {
+        font-size: 1em;
+    }
+
+    .contact-detail {
+        font-size: 1em;
     }
 }
